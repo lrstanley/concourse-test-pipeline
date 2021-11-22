@@ -2,7 +2,7 @@ deployments: &deployments
   - name: example
     trigger: true
   - name: example-2
-    trigger: true
+    trigger: "False"
 
 resources:
   - name: git-branch
@@ -27,7 +27,7 @@ jobs:
         values: *deployments
       do:
       - set_pipeline: "example"
-        file: source-repo/time-triggered.yaml
+        file: git-branch/time-triggered.yaml
         instance_vars:
           name: ((.:instance.name))
         vars:
