@@ -1,0 +1,34 @@
+deployments: &deployments
+  - name: example
+    trigger: true
+  - name: example-2
+    trigger: true
+
+resources:
+  - name: git-branch
+    type: git
+    icon: git
+    source:
+      uri: https://github.com/lrstanley/concourse-test-pipeline.git
+      branch: master
+
+jobs:
+  - name: update-deployments
+    public: false
+    serial: true
+    plan:
+    - in_parallel:
+        fail_fast: true
+        steps:
+        - get: git-branch
+          trigger: true
+    - across:
+      - var: instance
+        values: *deployments
+      do:
+      - set_pipeline: "example"
+        file: source-repo/time-triggered.yaml
+        instance_vars:
+          name: ((.:instance.name))
+        vars:
+          instance: ((.:instance))
