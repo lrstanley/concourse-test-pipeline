@@ -92,6 +92,6 @@ Below are a few guidelines if you would like to contribute:
 [discussions]: https://github.com/lrstanley/concourse-test-pipeline/discussions
 [issues]: https://github.com/lrstanley/concourse-test-pipeline/issues/new/choose
 [license]: https://github.com/lrstanley/concourse-test-pipeline/blob/master/LICENSE
-[pull-requests]: https://github.com/lrstanley/concourse-test-pipeline/issues/new/choose
+[pull-requests]: https://github.com/lrstanley/concourse-test-pipeline/pulls?q=is%3Aopen+is%3Apr
 [security]: https://github.com/lrstanley/concourse-test-pipeline/security/policy
 [support]: https://github.com/lrstanley/concourse-test-pipeline/blob/master/.github/SUPPORT.md
